@@ -1,0 +1,14 @@
+name: Kia Remote
+version: "0.1.0"
+slug: kia-remote
+description: Self-hosted remote for Kia Access cars (demo mode first)
+url: https://github.com/jhamrick1/ha-addon-kia-remote
+init: false
+arch:
+  - aarch64
+hostname: kia-remote
+startup: application
+boot: auto
+panel_icon: mdi:car-connected
+options: {}
+schema: {}
