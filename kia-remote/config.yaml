@@ -1,5 +1,5 @@
 name: Kia Remote
-version: "0.1.1"
+version: "0.1.2"
 slug: kia-remote
 description: Self-hosted remote for Kia Access cars (demo mode first)
 url: https://github.com/jhamrick1/ha-addon-kia-remote
@@ -10,9 +10,6 @@ hostname: kia-remote
 startup: application
 boot: auto
 panel_icon: mdi:car-connected
-ports:
-  8765/tcp: 8765
-ports_description:
-  8765/tcp: Kia Remote web app (login-gated, LAN-visible)
+host_network: true
 options: {}
 schema: {}
