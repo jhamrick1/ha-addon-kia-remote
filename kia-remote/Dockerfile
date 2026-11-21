@@ -10,7 +10,9 @@ RUN git clone https://github.com/jhamrick1/kia-remote-usa.git app \
     && /opt/venv/bin/pip install --no-cache-dir --upgrade pip \
     && /opt/venv/bin/pip install --no-cache-dir -r app/requirements.txt \
     && sed -i 's/^HOST = "127.0.0.1".*/HOST = "0.0.0.0"/' app/server/__main__.py \
-    && sed -i 's/return client_host not in (None, "127.0.0.1", "::1", "localhost")/return False  # tailnet deployment: trust non-CF clients; device approval still gates/' app/server/access.py
+    && sed -i 's|            raise ServiceError(403, "This car service isn.t set up for remote access yet "|            return "tailnet"  # tailnet deploy: ACL = layer 1, device gate = layer 2|' app/server/app.py \
+    && sed -i '/"Cloudflare Access settings missing on the PC").")/d' app/server/app.py \
+    && /opt/venv/bin/python -m py_compile app/server/app.py
 
 COPY run.sh /
 RUN chmod a+x /run.sh
