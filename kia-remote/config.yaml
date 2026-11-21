@@ -1,7 +1,7 @@
 name: Kia Remote
-version: "0.1.3"
+version: "0.2.0"
 slug: kia-remote
-description: Self-hosted remote for Kia Access cars (demo mode first)
+description: "Self-hosted remote for Kia Access USA cars (Carnival + Telluride)"
 url: https://github.com/jhamrick1/ha-addon-kia-remote
 init: false
 arch:
