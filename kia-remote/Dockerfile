@@ -5,7 +5,7 @@ RUN apk add --no-cache git gcc musl-dev libffi-dev openssl-dev python3-dev
 
 WORKDIR /opt
 RUN git clone https://github.com/jhamrick1/kia-remote-usa.git app \
-    && cd app && git checkout c06c1d2902c126a98a847ea794de009653050e0a && cd .. \
+    && cd app && git checkout 8217b274c39c97c3e307960fa29e4c8136a58df7 && cd .. \
     && python3 -m venv /opt/venv \
     && /opt/venv/bin/pip install --no-cache-dir --upgrade pip \
     && /opt/venv/bin/pip install --no-cache-dir -r app/requirements.txt \
