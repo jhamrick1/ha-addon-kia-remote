@@ -1,5 +1,5 @@
 name: Kia Remote
-version: "0.3.1"
+version: "0.3.2"
 slug: kia-remote
 description: "Self-hosted remote for Kia Access USA cars (Fahrenheit, multi-car)"
 url: https://github.com/jhamrick1/ha-addon-kia-remote
