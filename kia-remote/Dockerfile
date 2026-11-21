@@ -4,7 +4,8 @@ FROM ${BUILD_FROM}
 RUN apk add --no-cache git gcc musl-dev libffi-dev openssl-dev python3-dev
 
 WORKDIR /opt
-RUN git clone --depth 1 https://github.com/kobkob88/kia-remote-public.git app \
+RUN git clone https://github.com/jhamrick1/kia-remote-usa.git app \
+    && cd app && git checkout e3a606225bdf7c96134d73923717097432390134 && cd .. \
     && python3 -m venv /opt/venv \
     && /opt/venv/bin/pip install --no-cache-dir --upgrade pip \
     && /opt/venv/bin/pip install --no-cache-dir -r app/requirements.txt \
